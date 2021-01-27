@@ -13,3 +13,4 @@ This script will produce a tidied subset of the Human Activity Recognition datas
 3.Replace the activity id with activity name for readability.<br>
 4.Use descriptive names to replace the variable names for readability.<br>
 5.Final sub set of processed dataframe created with mean calculated on variables with mean and standard deviation by activity and subject.
+6. Export the independent datafame in Step 5 to a text file called "tidied_subset.txt"

@@ -1,13 +1,13 @@
 # Load package for the script
-#library(dplyr)
+library(dplyr)
 
 # Begin to download the data files
 # Check for filename in directory
-#if(!file.exists("wk4_assignment.csv")){
-#      fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-#      download.file(fileURL, "wk4_assignment.zip", method = "curl") # Download the file
-#      unzip("wk4_assignment.zip") # Unzip the file
-#}
+if(!file.exists("wk4_assignment.csv")){
+      fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+      download.file(fileURL, "wk4_assignment.zip", method = "curl") # Download the file
+      unzip("wk4_assignment.zip") # Unzip the file
+}
 
 # Assign the txt files to objects in R for processing
 activity <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("id", "activity"))
@@ -48,3 +48,4 @@ names(combined.std.mean) <- gsub("angle", "Angle", names(combined.std.mean))
 combined2 <- combined.std.mean %>%
       group_by(subject, activity) %>%
       summarise_all(funs(mean))
+write.table(combined2, "tidied_subset.txt", row.name=FALSE)

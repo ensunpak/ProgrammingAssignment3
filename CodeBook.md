@@ -56,3 +56,4 @@ Labels for the data captured in the test group is found in this dataset<br>
 ### Separate independent tidy dataset was created with mean calculated for each activity and subject
 1. New object combine2 created as a subset from combined.std.mean with mean computed using group by activity and subject
 *Resultant dimension: 180 rows x 88 columns*
+2. Export this dataset to a text file called "tidied_subset.txt"
